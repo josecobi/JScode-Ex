@@ -27,8 +27,12 @@
  * @return {boolean} Whether or not you can execute a fast attack.
  */
 export function canExecuteFastAttack(knightIsAwake) {
-  return knightIsAwake;
-
+  if(knightIsAwake === true) {
+    return false;
+  }
+  else {
+    return true;
+  }
 }
 
 /**
@@ -41,7 +45,12 @@ export function canExecuteFastAttack(knightIsAwake) {
  * @returns {boolean} Whether or not you can spy on someone.
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  if(knightIsAwake === false && archerIsAwake ===false && prisonerIsAwake === false){
+    return false;
+  }
+  else if(knightIsAwake === true || archerIsAwake ===true || prisonerIsAwake === true){
+    return true;
+  } 
 }
 
 /**
