@@ -62,7 +62,17 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  * @returns {boolean} Whether or not you can send a signal to the prisoner.
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  if(archerIsAwake === false){
+    if(prisonerIsAwake === true) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  else {
+    return false;
+  }
 }
 
 /**
@@ -81,5 +91,21 @@ export function canFreePrisoner(
   prisonerIsAwake,
   petDogIsPresent,
 ) {
-  throw new Error('Remove this line and implement the function');
+  if(petDogIsPresent === true && archerIsAwake ===  false){
+    return true;
+  }
+  else if(petDogIsPresent === false){
+    if(prisonerIsAwake === true && knightIsAwake === false && archerIsAwake === false){
+      return true;
+    }
+    else{ 
+      return false;
+    }
+  }
+  else {
+    return false;
+  }
+  
+  
+  
 }
